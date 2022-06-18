@@ -5,6 +5,7 @@ except ImportError: # for pip <= 9.0.3
     from pip.req import parse_requirements
 from setuptools import setup
 
+install_requirements = parse_requirements('./requirements.txt', session=False)
 install_requirements = list(install_requirements) 
 try:
     requirements = [str(ir.req) for ir in install_requirements]
